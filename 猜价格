@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int oldprice,price=0,i=0;
+	printf("请输入真实价格:");
+	scanf("%d",&oldprice);
+	system("cls");
+	printf("请输入猜想价格：\n");
+	
+	while(price != oldprice)
+	{
+		i++;
+		printf("参与者:");
+		scanf("%d",&price);
+		printf("主持人:");
+		if(price > oldprice)
+		{
+			printf("高了\n");
+	    }
+		else if(price < oldprice)
+		{
+			printf("低了\n");
+	    }
+		else
+		{
+			printf("对了\n");
+	    }
+	} 
+
+	 return 0;
+	 
+ } 

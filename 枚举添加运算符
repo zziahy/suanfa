@@ -1,0 +1,65 @@
+#include<stdio.h>
+int main()
+{
+	int num[6]={0,5,5,5,5,5},i[5],j,count=0;
+	char oper[5]={' ','+','-','*','/'};
+	int left,right;
+	int result=5,sign;
+	for(i[1]=1;i[1]<5;i[1]++)
+	{
+		if(num[2] != 0 ||i[1]<5)
+		{
+			for(i[2]=1;i[2]<5;i[2]++)
+			{
+				if(num[3] != 0||i[2]<5)
+				{
+					for(i[3]=1;i[3]<5;i[3]++)
+					if(num[4]!=0 ||i[3]<5)
+					{
+						for(i[4] = 1;i[4]<5;i[4]++)
+						if(num[5]!=0 ||i[4]<5)
+						{
+							
+							left=0;
+							right=num[1];
+							sign=1;
+							for(j=1;j<5;j++)
+							{
+							
+							switch(oper[i[j]])
+							{
+							case '+':
+								left=left+sign*right;
+								sign=1;
+								right=num[j+1];
+								break;
+							case '-': 
+								left=left+sign*right;
+								sign=-1;
+								right=num[j+1];
+								break;
+						   case '*':
+						   		right=right*num[j+1];
+						   		break;
+						   	case '/':
+						   		right=right/num[j+1];
+						   		break;
+						   }
+						   }
+							if(left+sign*right==result)
+						   	{
+							   count++;
+						   	printf("%3d:  ",count);
+						   	for(j=1;j<5;j++)
+						   	printf("%d%c",num[j],oper[i[j]]);
+						   	printf("%d=%d\n",num[5],result);
+						   }
+						}
+					
+					 } 
+				}
+			}
+		}
+	}
+	
+}
